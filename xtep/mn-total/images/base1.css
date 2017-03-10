@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+/*公共样式开始*/
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, span, fieldset, table, th, td{
+    margin:0;
+    padding:0;
+    list-style:none;
+    font-size:100%;
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+}
+img,a{
+    margin:0;
+    border:0;
+}
+.clear{
+    clear:both;
+}
+a{
+    text-decoration:none;
+    cursor:pointer;
+}
+
+html{
+    overflow-x:hidden;
+}
+
+.clearfloat{
+    clear:both;
+    height:1px;
+    font-size:0;
+    line-height: 0;
+    overflow:hidden;
+}
+.autoheight:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.hide{
+    display:block;
+    text-indent:-9999px;
+    font-size:0;
+    line-height:0;
+    overflow:hidden;
+}
+.left{ float:left}
+.right{ float:right}
+.orange{ color:#ee7700;}
+.green{ color:#82af33;}
+.blue{ color:#00b9ef;}
+.blue01{ color:#1a467f;}
+.black{color:#4d4d4c}
+.red{color:#ee3124}
+.f8{ font-size:8px;}
+.f14{ font-size:14px;}
+.f16{ font-size:16px;}
+.f18{ font-size:18px;}
+.fb{ font-weight:bold;}
+.fw{
+    font-family:"微软雅黑", Verdana, Geneva, sans-serif;
+}
+.t_d{ text-decoration:underline;}
+.pd{ padding-bottom:10px;}
+/*公共样式结束*/

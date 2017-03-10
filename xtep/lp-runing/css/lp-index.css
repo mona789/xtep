@@ -1,0 +1,109 @@
+/*ad广告start*/
+
+#lp_ad {
+    background-size: contain;
+    height: 471px;
+    margin: 0 auto;
+    /*background: url(../images/r002.jpg);*/
+    background-image: url(../images/lp1-bj.png);
+    position: relative;
+}
+#lp_ad ul li .lp-img1 {
+    position: absolute;
+    /*top: 150px;*/
+    left: -450px;
+}
+#lp_ad ul li .lp-img2 {
+    position: absolute;
+    /*top: 150px;*/
+    left: -450px;
+}
+#lp_ad ul li .lp-img3 {
+    position: absolute;
+    /*top: 100px;*/
+    left: -450px;
+}
+#lp_ad ul li .lp-img4 {
+    position: absolute;
+    /*top: 150px;*/
+    /*right: -100px;*/
+    left: 2000px;
+}
+#lp_ad ul li .lp-img5 {
+    position: absolute;
+    top: 750px;
+    left: 2000px;
+}
+#lp_ad ul li .lp-img6 {
+    position: absolute;
+    top: 150px;
+    left: 480px;
+}
+#lp_ad ul li .lp-img7 {
+    opacity: 0;
+    position: absolute;
+    top: 270px;
+    left: 870px;
+}
+/*ad广告end*/
+/*内容部分start*/
+#lp_content {
+    background-size: contain;
+    height: 335px;
+    background-image: url(../images/r002.jpg);
+    margin: 0 auto;
+    /*position: relative;*/
+}
+.lp-banxin {
+    width: 1060px;
+    height: 301px;
+    background-color: #333333;
+    margin: 0 auto;
+    padding: 30px 12px;
+    position: relative;
+}
+#lp_content .lp-banxin ul {
+    /*margin: 29px 20px;*/
+}
+#lp_content .lp-banxin ul li{
+    float: left;
+    background-image: url(../images/cbg01.jpg);
+}
+#lp_content .lp-banxin ul li:hover {
+    background-image: url("../images/chover01.jpg");
+}
+#lp_content .lp-banxin ul li a {
+    width: 250px;
+    height: 300px;
+    display: inline-block;
+    padding: 7px;
+}
+#lp_content .lp-banxin ul li img {
+    transform: rotateY(0deg);
+    transition: 3s;
+}
+#lp_content .lp-banxin ul li a .p1 {
+    font-family: "微软雅黑",Verdana, Geneva, sans-serif;
+    font-size: 24px;
+    color: #D8D8D8;
+    font-weight: 700;
+    margin-top: 38px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+#lp_content .lp-banxin ul li a .p2 {
+    font-family: "微软雅黑",Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    color: #A9A9A9;
+    font-weight: 700;
+    text-align: center;
+}
+#lp_content .lp-banxin i {
+    width: 117px;
+    height: 36px;
+    position: absolute;
+    /*top: -23px;*/
+    right: -100px;
+    background: url("../images/nybt_run.png") no-repeat;
+}
+/*内容部分end*/

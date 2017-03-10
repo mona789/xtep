@@ -1,0 +1,275 @@
+/*最上面搜索框*/
+.liang-top {
+    height: 40px;
+    background-color: #232323;
+}
+
+/*背景*/
+
+.liang-banner {
+    /*background-color: #3F3F3F;*/
+    height: 481px;
+    border-bottom: 1px solid #0B0B0B;
+}
+
+.liang-banner u {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 150px;
+
+}
+
+.liang-banner img {
+    margin: 0 auto;
+    margin: 0 auto;
+}
+
+.liang-banner .background a {
+    background: url("../images/liang-09.png") no-repeat;
+    opacity: 0;
+    background-size: cover;
+    height: 481px;
+    margin: 0 auto;
+    display: block;
+}
+
+/*制造生活*/
+.liang-banner s {
+    display: block;
+    position: absolute;
+    background-image: url("../images/liang-06.png");
+}
+
+/*中间部分*/
+.liang-middle {
+    background-color: #404038;
+    border-bottom: 1px solid #000;
+    position: relative;
+    padding-top: 300px;
+}
+
+/*当季新品部分*/
+
+.liang-middle .liang-itemize {
+    height: 380px;
+    width: 1100px;
+    margin: 0 auto;
+    background-color: #333333;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    margin-left: -550px;
+}
+
+.liang-middle .liang-itemize li {
+    display: inline-block;
+    width: 353px;
+    height: 341px;
+    margin-top: 15px;
+}
+
+.liang-middle .liang-itemize .liang-ml {
+    margin-left: 10px;
+}
+
+.liang-middle div {
+    width: 100%;
+}
+
+.liang-middle .liang-itemize span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font: 21px "microsoft yahei";
+    color: white;
+    margin-top: 37px;
+}
+
+.liang-middle .liang-itemize u {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font: 9px "microsoft yahei";
+    color: white;
+}
+
+.liang-middle .liang-itemize .liang-mc {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.liang-middle .liang-itemize li a {
+    background-image: url("../images/liang-03.jpg");
+    display: block;
+    height: 341px;
+    padding-top: 10px;
+}
+
+.liang-middle .liang-itemize img {
+    display: block;
+    width: 333px;
+    height: 186px;
+    margin: 0 auto;
+}
+
+.liang-middle .liang-itemize li a:hover {
+    background-image: url("../images/liang-04.jpg");
+}
+
+.liang-middle .liang-itemize .city {
+    width: 117px;
+    height: 36px;
+    background-image: url("../images/liang-08.png");
+    position: absolute;
+    top: -23px;
+    left: 10px;
+}
+
+/*二维码*/
+.liang-middle #move {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 400px;
+    left: 80px;
+}
+
+#move div {
+    width: 0px;
+    height: 0px;
+    background-color: rgb(154, 165, 236);
+    position: absolute;
+}
+
+.liang-middle #map {
+    width: 218px;
+    height: 218px;
+    background: url("../images/liang-map.png") no-repeat;
+    position: absolute;
+    top: 385px;
+    left: 65px;
+    border: 7px solid white;
+    display: none; /*二维码隐藏*/
+}
+
+/*轮播图部分*/
+
+.liang-middle #liangMovemap {
+    width: 618px;
+    height: 412px;
+    margin: 0 auto;
+    border: 8px solid #45455A;
+    position: relative;
+    overflow: hidden; /*此处用来隐藏显示图片*/
+}
+
+.liang-middle #liangMovemap ul {
+    height: 412px;
+    width: 3090px;
+    position: absolute;
+}
+
+.liang-middle #liangMovemap ul li {
+    float: left;
+}
+
+.liang-middle #liangMovemap ol {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -52px;
+}
+
+#liangFraction ol li {
+    float: left;
+    width: 16px;
+    height: 16px;
+    background: yellow;
+    margin: 0 5px;
+    border-radius: 8px;
+}
+
+#liangFraction ol li.current {
+    background: red;
+}
+
+#liangFraction {
+    display: none;
+}
+
+#liangLeft {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -25px;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    height: 50px;
+    width: 30px;
+    font: 900 30px/50px "黑体";
+    color: white;
+    text-align: center;
+}
+
+#liangRight {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -25px;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    height: 50px;
+    width: 30px;
+    font: 900 30px/50px "黑体";
+    color: white;
+    text-align: center;
+}
+
+/*动画*/
+#cartoon {
+    position: absolute;
+    width: 30px;
+    height: 72px;
+    top: 450px;
+    right: 100px;
+    overflow: hidden;
+}
+
+#cartoon ul {
+    width: 90px;
+    position: absolute;
+}
+
+#cartoon ul li {
+    width: 30px;
+    float: left;
+}
+
+/*结尾*/
+.liang-end {
+    height: 100px;
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

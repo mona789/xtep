@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>特步，飞一般的感觉</title>
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+            position: fixed;
+            background-color: #000000;
+            position: relative;
+            opacity: 0;
+
+        }
+
+        #pic1 {
+            position: absolute;
+            top: 30px;
+            left: 100px;
+        }
+
+        #pic2 {
+            position: absolute;
+            left: -1000px;
+            top: 265px;
+        }
+
+        #jum h1 {
+            font-size: 48px;
+            color: red;
+            position: absolute;
+            left: 400px;
+            top: 150px;
+
+        }
+
+        a {
+            font-size: 20px;
+            position: absolute;
+            text-decoration: none;
+        }
+
+        #a1 {
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            right: 100px;
+            top: 5px;
+        }
+
+        #a2 {
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            top: 5px;
+            right: 10px;
+        }
+
+        #mask {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: rgba(255, 255, 255, .5);
+            position: fixed;
+            display: none;
+            z-index: 999;
+        }
+
+        #display1 {
+            width: 400px;
+            height: 250px;
+            position: fixed;
+            /*border: 4px solid #575757;*/
+            box-shadow: 2px 2px 2px 2px #666;
+            background-color: #999999;
+            top: 30%;
+            left: 35%;
+            z-index: 1000;
+            display: none;
+        }
+
+        #display2 {
+            width: 400px;
+            height: 250px;
+            box-shadow: 2px 2px 2px 2px #666;
+            background-color: #999999;
+            position: fixed;
+            top: 30%;
+            left: 35%;
+            z-index: 1000;
+            display: none;
+        }
+
+        table {
+            margin-top: 35px;
+            margin-left: 50px;
+        }
+
+        tr {
+            margin-bottom: 50px;
+        }
+
+        .tab tr span {
+            font-size: 12px;
+            margin: 0 0 0 5px;
+        }
+
+        span {
+            float: right;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: aliceblue;
+        }
+
+        p {
+            color: mediumblue;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        #demo {
+            width: 300px;
+            height: 300px;
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            color: grey;
+        }
+
+        #no {
+            width: 300px;
+            height: 300px;
+            position: fixed;
+            top: 8%;
+            left: 30%;
+        }
+
+        #jump {
+            margin-top: 50px;
+            color: red;
+            background-color: #999999;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+        .right {
+            color: green;
+        }
+
+    </style>
+    <script>
+        //        入口函数
+        window.onload = function () {
+//            获取所需元素的id值
+            var a1 = document.getElementById("a1");
+            var a2 = document.getElementById("a2");
+            var mask = document.getElementById("mask");
+            var display1 = document.getElementById("display1");
+            var display2 = document.getElementById("display2");
+            var close1 = document.getElementById("close1");
+            var close2 = document.getElementById("close2");
+            var jump = document.getElementById("jump");
+            var inpName = document.getElementById("inpName");
+            var pic2 = document.getElementById("pic2");
+            var tab = document.getElementById("tab");
+            var spans = tab.getElementsByTagName("span");
+            var timer = null;
+//            点击链接弹出对应窗口
+            a1.onclick = function () {
+                mask.style.display = "block";
+                display1.style.display = "block";
+            };
+//            点击×关闭对应的窗口
+            jump.onclick = function () {
+                display1.style.display = "none";
+                display2.style.display = "block";
+            };
+//            点击×关闭对应的窗口
+            close1.onclick = function () {
+                mask.style.display = "none";
+                display1.style.display = "none";
+                display2.style.display = "none";
+            };
+//            点击链接弹出对应窗口
+            a2.onclick = function () {
+                mask.style.display = "block";
+                display2.style.display = "block";
+            };
+//            点击注册弹出注册窗口
+            close2.onclick = function () {
+                mask.style.display = "none";
+                display1.style.display = "none";
+                display2.style.display = "none";
+            };
+            //验证用户名
+            var regName = /^[\u4e00-\u9fa5]{2,6}\d{3}$/;
+            check(inpName, regName);
+            var regPassWord = /^\w{6,12}$/;
+            check(inpPassWord, regPassWord);
+
+
+            function check(inp, reg) {
+                inp.onblur = function () {
+                    if (reg.test(this.value)) {
+                        spans[0].innerHTML = "输入正确";
+                        spans[0].className = "right";
+                    } else {
+                        spans[0].innerHTML = "输入错误";
+                        spans[0].className = "wrong";
+                    }
+                };
+            }
+
+            moveTarget(document.body, {"opacity": 1}, function () {
+                moveTarget(pic2, {"left": 100, "top": 265}, function () {
+                    moveTarget(pic2, {"opacity": 0}, function () {
+                        moveTarget(pic2, {"opacity": 1})
+
+
+                    })
+                })
+            });
+
+
+            function moveTarget(obj, json, fn) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function () {
+                    var flag = true;
+                    for (var k in json) {
+                        if (k === "opacity") {
+                            var leader = getStyle(obj, k) * 100;
+                            var target = json[k] * 100;
+                            var step = (target - leader) / 10;
+                            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                            leader = leader + step;
+                            obj.style[k] = leader / 100;//没有单位
+                        }
+                        else if (k === "zIndex") {
+                            obj.style.zIndex = json[k];
+                        }
+                        else {
+                            var leader = parseInt(getStyle(obj, k)) || 0;
+                            var target = json[k];
+                            var step = (target - leader) / 10;
+                            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                            leader = leader + step;
+                            obj.style[k] = leader + "px";
+                        }
+                        if (leader != target) {
+                            flag = false;
+                        }
+                    }
+                    if (flag) {
+                        clearInterval(obj.timer);
+                        if (typeof fn == "function") {
+                            fn();
+                        }
+                    }
+                }, 50);
+            }
+
+            function getStyle(obj, attr) {
+                if (window.getComputedStyle) {
+                    return window.getComputedStyle(obj, null)[attr];
+                }
+                else {
+                    return obj.currentStyle[attr];
+                }
+            }
+        };
+
+    </script>
+</head>
+<body>
+<a id="a1" href="#">请登录</a>
+<a id="a2" href="#">注册</a>
+<img id="pic1" src="sadsadsadsadsadasdasdasdas.png" alt=""/>
+<img id="pic2" src="bj.fw.png" alt=""/>
+<a id="jum" href="../特步-李博-首页/lb-index.html"><i></i>
+
+    <h1>点击进入我的世界 </h1></a>
+<!--隐藏的阴影-->
+<div id="mask"></div>
+<!--登录的div-->
+<div id="display1">
+    <span id="close1">×</span>
+
+    <p>你好，请登录：</p>
+
+    <form action="">
+        <table class="tab" id="tab">
+            <tr>
+                <td>用户名：</td>
+                <td><input id="inpName" type="text"/></td>
+                <td><span></span></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input id="inpPassWord" type="password"/></td>
+                <td><span></span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="确认登录"/></td>
+            </tr>
+        </table>
+        <span id="jump">没账号啊，点击注册吧</span>
+    </form>
+</div>
+<!--注册的div-->
+<div id="display2">
+    <span id="close2">×</span>
+
+    <p>你好，请注册：</p>
+
+    <form action="">
+        <table>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text"/></td>
+            </tr>
+            <tr>
+                <td>昵称：</td>
+                <td><input type="text"/></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="password"/></td>
+            </tr>
+            <tr>
+                <td>确认密码：</td>
+                <td><input type="password"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="确认注册"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
